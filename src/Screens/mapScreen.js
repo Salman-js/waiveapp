@@ -42,6 +42,7 @@ const MapScreen = ({ route }) => {
           identifier='origin'
           title='Origin'
           pinColor='#000000'
+          image={require('../../assets/pin.png')}
         />
       </MapView>
       <SafeAreaView className='absolute bottom-0 w-full z-40 bg-white'>
