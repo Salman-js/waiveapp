@@ -1,51 +1,56 @@
-import { View, Text, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, ScrollView, ImageBackground, Image } from 'react-native';
 import React, { useRef } from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import tw from 'twrnc';
 import { IconButton, Pressable } from '@react-native-material/core';
+import { TextInput } from 'react-native-paper';
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View className='pt-14 pb-28 bg-white h-full px-2'>
-      <View className='w-full flex flex-row justify-between px-1 mb-1'>
-        <View className='rounded-lg overflow-hidden my-auto'>
-          <Pressable style={tw.style('p-1 flex flex-row')}>
-            <Icon
-              name='map-marker-outline'
-              size={25}
-              color='#ddba20'
-              style={tw.style('my-auto mr-2')}
+    <View className='pt-14 pb-28 bg-white h-full px-6'>
+      <Text className='text-6xl font-light text-black mt-16 tracking-tighter'>
+        WAIVE
+      </Text>
+      <TextInput
+        theme={{
+          roundness: 10,
+          mode: 'adaptive',
+          colors: {
+            onSurface: 'black',
+            background: 'white',
+            border: '#ffffff',
+          },
+        }}
+        blurOnSubmit
+        focusable={false}
+        autoFocus={false}
+        placeholder='Addis Ababa, Ethiopia'
+        mode='standard'
+        underlineColor='#ffffff'
+        textColor='black'
+        style={tw.style('bg-white w-full border-0')}
+      />
+      <View className='w-full flex flex-row justify-start space-x-3 py-3'>
+        <View className='w-2/5 rounded-lg bg-slate-200 overflow-hidden'>
+          <Pressable
+            style={tw.style('w-full flex items-start justify-center p-5')}
+          >
+            <Image
+              source={{
+                uri: 'https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_896,h_504/f_auto,q_auto/products/carousel/UberX.png',
+              }}
+              className='w-20 h-20'
             />
-            <View>
-              <Text className='font-extralight text-xs text-black mb-3 my-auto'>
-                Destination
+            <View className='space-y-2 mt-2'>
+              <Text className='text-lg font-extrabold text-gray-600'>
+                Get a ride
               </Text>
-              <Text className='text-sm text-black mb-3 my-auto'>
-                Current location
-              </Text>
+              <Ionicons name='arrow-forward-circle' size={35} />
             </View>
-            <Feather
-              name='chevron-down'
-              size={20}
-              style={tw.style('ml-1 my-auto')}
-              color='#939191'
-            />
           </Pressable>
         </View>
-        <IconButton
-          icon={(props) => (
-            <Ionicons
-              name='receipt-outline'
-              {...props}
-              size={30}
-              color='#ddba20'
-            />
-          )}
-          style={tw.style('my-auto')}
-          onPress={() => navigation.navigate('Orders')}
-        />
       </View>
     </View>
   );
