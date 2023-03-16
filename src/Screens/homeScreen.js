@@ -23,7 +23,7 @@ const HomeScreen = ({ navigation }) => {
           nearbyPlacesAPI='GooglePlacesSearch'
           debounce={400}
           query={{
-            key: 'AIzaSyDBPs66xCKmXvYGMU72J34ngnYkEzFWMaY',
+            key: 'API_KEY',
             language: 'en',
           }}
         />
