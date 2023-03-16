@@ -23,6 +23,6 @@ export const navSlice = createSlice({
 });
 
 export const { setOrigin, setDestination, setTravelTimeInfo } =
-  counterSlice.actions;
+  navSlice.actions;
 
-export default counterSlice.reducer;
+export default navSlice.reducer;
